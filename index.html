@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chatterbox TTS – Resemble AI</title>
+  <meta name="description" content="Resemble AI tarafından geliştirilen açık kaynaklı metin-sesten-sese dönüşüm sistemi." />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -374,26 +375,26 @@
     🎙 Chatter<span>box</span>
   </div>
   <ul class="nav-links">
-    <li><a href="#models">Models</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#quickstart">Quickstart</a></li>
-    <li><a href="#languages">Languages</a></li>
+    <li><a href="#models">Modeller</a></li>
+    <li><a href="#features">Özellikler</a></li>
+    <li><a href="#quickstart">Hızlı Başlangıç</a></li>
+    <li><a href="#languages">Diller</a></li>
     <li><a href="https://github.com/resemble-ai/chatterbox" target="_blank">GitHub ↗</a></li>
   </ul>
 </nav>
 
 <!-- Hero -->
 <section class="hero">
-  <div class="badge">Open Source · MIT License</div>
-  <h1>Text-to-Speech that <em>sounds human</em></h1>
+  <div class="badge">Açık Kaynak · MIT Lisansı</div>
+  <h1>İnsan gibi <em>konuşan</em> yapay zeka</h1>
   <p class="hero-sub">
-    Chatterbox by Resemble AI — zero-shot voice cloning, 23+ languages, expressive paralinguistic tags, and built-in AI watermarking.
+    Resemble AI'dan Chatterbox — sıfır örnekle ses klonlama, 23+ dil desteği, dışavurumlu paralinguistik etiketler ve yerleşik yapay zeka filigranlama.
   </p>
   <div class="btn-row">
     <a class="btn btn-primary" href="https://github.com/resemble-ai/chatterbox" target="_blank">
-      ★ Star on GitHub
+      ★ GitHub'da Yıldızla
     </a>
-    <a class="btn btn-outline" href="#quickstart">Quick Start →</a>
+    <a class="btn btn-outline" href="#quickstart">Hızlı Başlangıç →</a>
   </div>
 </section>
 
@@ -401,38 +402,38 @@
 <div class="stats">
   <div class="stat">
     <div class="stat-value">3</div>
-    <div class="stat-label">Model Variants</div>
+    <div class="stat-label">Model Çeşidi</div>
   </div>
   <div class="stat">
     <div class="stat-value">23+</div>
-    <div class="stat-label">Languages</div>
+    <div class="stat-label">Desteklenen Dil</div>
   </div>
   <div class="stat">
     <div class="stat-value">350M</div>
-    <div class="stat-label">Turbo Parameters</div>
+    <div class="stat-label">Turbo Parametre</div>
   </div>
   <div class="stat">
     <div class="stat-value">MIT</div>
-    <div class="stat-label">License</div>
+    <div class="stat-label">Lisans</div>
   </div>
 </div>
 
 <!-- Models -->
 <section id="models">
-  <h2>Choose your model</h2>
-  <p class="section-lead">Three purpose-built variants — pick the right trade-off between speed, quality, and language coverage.</p>
+  <h2>Modelini seç</h2>
+  <p class="section-lead">Üç amaca özel varyant — hız, kalite ve dil kapsamı arasındaki doğru dengeyi seç.</p>
 
   <div class="models-grid">
     <div class="model-card">
       <div class="model-tag tag-turbo">Turbo</div>
       <h3>Chatterbox Turbo</h3>
       <p style="font-size:.88rem;color:var(--muted);">
-        Production-ready, low-latency English TTS. Supports expressive paralinguistic tags like <code>[laugh]</code>, <code>[cough]</code>, and <code>[chuckle]</code>. Ideal for voice agents.
+        Üretime hazır, düşük gecikmeli İngilizce TTS. <code>[laugh]</code>, <code>[cough]</code> ve <code>[chuckle]</code> gibi dışavurumlu paralinguistik etiketleri destekler. Sesli asistanlar için idealdir.
       </p>
       <div class="model-meta">
-        <span>350M params</span>
-        <span>English</span>
-        <span>1-step decode</span>
+        <span>350M parametre</span>
+        <span>İngilizce</span>
+        <span>1 adım çözme</span>
       </div>
     </div>
 
@@ -440,12 +441,12 @@
       <div class="model-tag tag-multi">Multilingual</div>
       <h3>Chatterbox Multilingual</h3>
       <p style="font-size:.88rem;color:var(--muted);">
-        Zero-shot voice cloning across 23+ languages. Provide a short reference audio clip and generate speech in any supported language.
+        23+ dilde sıfır örnekle ses klonlama. Kısa bir referans ses klibi sağla ve desteklenen herhangi bir dilde konuşma üret.
       </p>
       <div class="model-meta">
-        <span>500M params</span>
-        <span>23+ languages</span>
-        <span>Zero-shot cloning</span>
+        <span>500M parametre</span>
+        <span>23+ dil</span>
+        <span>Sıfır örnekle klonlama</span>
       </div>
     </div>
 
@@ -453,12 +454,12 @@
       <div class="model-tag tag-orig">Original</div>
       <h3>Chatterbox</h3>
       <p style="font-size:.88rem;color:var(--muted);">
-        Creative control with CFG and exaggeration sliders. Best for narration, audiobooks, and scenarios where you want fine-grained stylistic control.
+        CFG ve abartma kaydırıcılarıyla yaratıcı kontrol. Seslendirme, sesli kitap ve ince üslup denetimi istediğiniz senaryolar için en iyisi.
       </p>
       <div class="model-meta">
-        <span>500M params</span>
-        <span>English</span>
-        <span>CFG control</span>
+        <span>500M parametre</span>
+        <span>İngilizce</span>
+        <span>CFG kontrolü</span>
       </div>
     </div>
   </div>
@@ -466,60 +467,60 @@
 
 <!-- Features -->
 <section id="features">
-  <h2>Key features</h2>
-  <p class="section-lead">Everything you need to build expressive, responsible AI voice applications.</p>
+  <h2>Temel özellikler</h2>
+  <p class="section-lead">Dışavurumlu ve sorumlu yapay zeka ses uygulamaları oluşturmak için ihtiyacın olan her şey.</p>
 
   <div class="features-grid">
     <div class="feature-card">
       <div class="feature-icon">🎭</div>
-      <h3>Paralinguistic Tags</h3>
-      <p>Add natural expressions to generated speech: <code>[laugh]</code>, <code>[cough]</code>, <code>[sigh]</code>, and more.</p>
+      <h3>Paralinguistik Etiketler</h3>
+      <p>Üretilen konuşmaya doğal ifadeler ekle: <code>[laugh]</code>, <code>[cough]</code>, <code>[sigh]</code> ve daha fazlası.</p>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🎤</div>
-      <h3>Zero-Shot Voice Cloning</h3>
-      <p>Clone any voice from a short reference audio clip — no fine-tuning required.</p>
+      <h3>Sıfır Örnekle Ses Klonlama</h3>
+      <p>Kısa bir referans ses klibinden herhangi bir sesi klonla — ince ayar gerekmez.</p>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🌍</div>
-      <h3>23+ Languages</h3>
-      <p>From Arabic to Chinese — generate high-quality speech in over two dozen languages with the multilingual model.</p>
+      <h3>23+ Dil</h3>
+      <p>Arapçadan Çinceye — çok dilli model ile yirmiden fazla dilde yüksek kaliteli konuşma üret.</p>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🔏</div>
-      <h3>AI Watermarking</h3>
-      <p>Every generated audio is perceptually watermarked via Perth for responsible AI content detection.</p>
+      <h3>Yapay Zeka Filigranlama</h3>
+      <p>Üretilen her ses, sorumlu yapay zeka içerik tespiti için Perth aracılığıyla algısal olarak filigranlanır.</p>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">⚡</div>
-      <h3>Fast Inference</h3>
-      <p>Distilled 1-step decoder in Turbo model enables real-time generation for low-latency applications.</p>
+      <h3>Hızlı Çıkarım</h3>
+      <p>Turbo modeldeki damıtılmış 1 adımlı çözücü, düşük gecikmeli uygulamalar için gerçek zamanlı üretim sağlar.</p>
     </div>
 
     <div class="feature-card">
       <div class="feature-icon">🎛️</div>
-      <h3>Style Control</h3>
-      <p>CFG guidance and exaggeration parameters let you dial in exactly the vocal style you need.</p>
+      <h3>Üslup Kontrolü</h3>
+      <p>CFG rehberliği ve abartma parametreleri tam olarak ihtiyacın olan ses tarzını ayarlamana izin verir.</p>
     </div>
   </div>
 </section>
 
 <!-- Quick Start -->
 <section id="quickstart">
-  <h2>Quick start</h2>
-  <p class="section-lead">Get running in minutes.</p>
+  <h2>Hızlı başlangıç</h2>
+  <p class="section-lead">Dakikalar içinde çalıştır.</p>
 
-  <h3 style="margin-bottom:.75rem;color:var(--muted);font-weight:500;">1 · Install</h3>
+  <h3 style="margin-bottom:.75rem;color:var(--muted);font-weight:500;">1 · Kurulum</h3>
   <div class="install-box" style="margin-bottom:2rem;">
     <code class="install-cmd">pip install chatterbox-tts</code>
-    <button class="copy-btn" onclick="navigator.clipboard.writeText('pip install chatterbox-tts');this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',1500)">Copy</button>
+    <button class="copy-btn" onclick="navigator.clipboard.writeText('pip install chatterbox-tts');this.textContent='Kopyalandı!';setTimeout(()=>this.textContent='Kopyala',1500)">Kopyala</button>
   </div>
 
-  <h3 style="margin-bottom:.75rem;color:var(--muted);font-weight:500;">2 · Generate speech</h3>
+  <h3 style="margin-bottom:.75rem;color:var(--muted);font-weight:500;">2 · Konuşma üret</h3>
 
   <div class="code-tabs">
     <div class="tab-bar">
@@ -535,7 +536,7 @@
 
 model = <span class="fn">ChatterboxTurboTTS</span>.from_pretrained(device=<span class="st">"cuda"</span>)
 
-<span class="cm"># Basic generation with paralinguistic tags</span>
+<span class="cm"># Paralinguistik etiketlerle temel üretim</span>
 wav = model.<span class="fn">generate</span>(
     <span class="st">"I can't believe it [laugh] that's hilarious!"</span>,
     audio_prompt_path=<span class="st">"reference.wav"</span>,
@@ -550,7 +551,7 @@ torchaudio.<span class="fn">save</span>(<span class="st">"output.wav"</span>, wa
 
 model = <span class="fn">ChatterboxMultilingualTTS</span>.from_pretrained(device=<span class="st">"cuda"</span>)
 
-<span class="cm"># Generate French speech with voice cloning</span>
+<span class="cm"># Ses klonlama ile Fransızca konuşma üret</span>
 wav = model.<span class="fn">generate</span>(
     <span class="st">"Bonjour, comment allez-vous aujourd'hui?"</span>,
     audio_prompt_path=<span class="st">"reference.wav"</span>,
@@ -566,7 +567,7 @@ torchaudio.<span class="fn">save</span>(<span class="st">"output_fr.wav"</span>,
 
 model = <span class="fn">ChatterboxTTS</span>.from_pretrained(device=<span class="st">"cuda"</span>)
 
-<span class="cm"># Use exaggeration for expressive narration</span>
+<span class="cm"># Dışavurumlu seslendirme için abartmayı kullan</span>
 wav = model.<span class="fn">generate</span>(
     <span class="st">"The storm raged on through the darkest night."</span>,
     audio_prompt_path=<span class="st">"reference.wav"</span>,
@@ -580,54 +581,54 @@ torchaudio.<span class="fn">save</span>(<span class="st">"output.wav"</span>, wa
     <div id="tab-watermark" class="tab-pane">
       <pre><code><span class="kw">import</span> perth, librosa
 
-<span class="cm"># Detect AI watermark in any Chatterbox-generated audio</span>
+<span class="cm"># Chatterbox ile üretilen seslerdeki yapay zeka filigranını tespit et</span>
 audio, sr = librosa.<span class="fn">load</span>(<span class="st">"output.wav"</span>, sr=<span class="nb">None</span>)
 
 watermarker = perth.<span class="fn">PerthImplicitWatermarker</span>()
 result = watermarker.<span class="fn">get_watermark</span>(audio, sample_rate=sr)
 
-<span class="fn">print</span>(<span class="st">f"Watermark detected: </span>{result}<span class="st">"</span>)</code></pre>
+<span class="fn">print</span>(<span class="st">f"Filigran tespit edildi: </span>{result}<span class="st">"</span>)</code></pre>
     </div>
   </div>
 </section>
 
 <!-- Languages -->
 <section id="languages">
-  <h2>Supported languages</h2>
-  <p class="section-lead">The multilingual model covers 23+ languages out of the box.</p>
+  <h2>Desteklenen diller</h2>
+  <p class="section-lead">Çok dilli model, kutudan çıkar çıkmaz 23'ten fazla dili kapsar.</p>
   <div class="lang-grid">
-    <div class="lang-chip">🇸🇦 Arabic</div>
-    <div class="lang-chip">🇩🇰 Danish</div>
-    <div class="lang-chip">🇩🇪 German</div>
-    <div class="lang-chip">🇬🇷 Greek</div>
-    <div class="lang-chip">🇺🇸 English</div>
-    <div class="lang-chip">🇪🇸 Spanish</div>
-    <div class="lang-chip">🇫🇮 Finnish</div>
-    <div class="lang-chip">🇫🇷 French</div>
-    <div class="lang-chip">🇮🇱 Hebrew</div>
-    <div class="lang-chip">🇮🇳 Hindi</div>
-    <div class="lang-chip">🇮🇹 Italian</div>
-    <div class="lang-chip">🇯🇵 Japanese</div>
-    <div class="lang-chip">🇰🇷 Korean</div>
-    <div class="lang-chip">🇲🇾 Malay</div>
-    <div class="lang-chip">🇳🇱 Dutch</div>
-    <div class="lang-chip">🇳🇴 Norwegian</div>
-    <div class="lang-chip">🇵🇱 Polish</div>
-    <div class="lang-chip">🇧🇷 Portuguese</div>
-    <div class="lang-chip">🇷🇺 Russian</div>
-    <div class="lang-chip">🇸🇪 Swedish</div>
-    <div class="lang-chip">🇹🇿 Swahili</div>
-    <div class="lang-chip">🇹🇷 Turkish</div>
-    <div class="lang-chip">🇨🇳 Chinese</div>
+    <div class="lang-chip">🇸🇦 Arapça</div>
+    <div class="lang-chip">🇩🇰 Danca</div>
+    <div class="lang-chip">🇩🇪 Almanca</div>
+    <div class="lang-chip">🇬🇷 Yunanca</div>
+    <div class="lang-chip">🇺🇸 İngilizce</div>
+    <div class="lang-chip">🇪🇸 İspanyolca</div>
+    <div class="lang-chip">🇫🇮 Fince</div>
+    <div class="lang-chip">🇫🇷 Fransızca</div>
+    <div class="lang-chip">🇮🇱 İbranice</div>
+    <div class="lang-chip">🇮🇳 Hintçe</div>
+    <div class="lang-chip">🇮🇹 İtalyanca</div>
+    <div class="lang-chip">🇯🇵 Japonca</div>
+    <div class="lang-chip">🇰🇷 Korece</div>
+    <div class="lang-chip">🇲🇾 Malayca</div>
+    <div class="lang-chip">🇳🇱 Hollandaca</div>
+    <div class="lang-chip">🇳🇴 Norveççe</div>
+    <div class="lang-chip">🇵🇱 Lehçe</div>
+    <div class="lang-chip">🇧🇷 Portekizce</div>
+    <div class="lang-chip">🇷🇺 Rusça</div>
+    <div class="lang-chip">🇸🇪 İsveççe</div>
+    <div class="lang-chip">🇹🇿 Svahili</div>
+    <div class="lang-chip">🇹🇷 Türkçe</div>
+    <div class="lang-chip">🇨🇳 Çince</div>
   </div>
 </section>
 
 <!-- CTA -->
 <div class="cta">
-  <h2>Start building with Chatterbox</h2>
-  <p>Open source, MIT licensed, and ready for production.</p>
+  <h2>Chatterbox ile geliştirmeye başla</h2>
+  <p>Açık kaynak, MIT lisanslı ve üretime hazır.</p>
   <div class="btn-row">
-    <a class="btn btn-primary" href="https://github.com/resemble-ai/chatterbox" target="_blank">View on GitHub ↗</a>
+    <a class="btn btn-primary" href="https://github.com/resemble-ai/chatterbox" target="_blank">GitHub'da İncele ↗</a>
     <a class="btn btn-outline" href="https://resemble.ai" target="_blank">Resemble AI →</a>
   </div>
 </div>
@@ -635,8 +636,8 @@ result = watermarker.<span class="fn">get_watermark</span>(audio, sample_rate=sr
 <!-- Footer -->
 <footer>
   <p>
-    Built on <a href="https://github.com/resemble-ai/chatterbox" target="_blank">Chatterbox</a> by
-    <a href="https://resemble.ai" target="_blank">Resemble AI</a> · MIT License
+    <a href="https://github.com/resemble-ai/chatterbox" target="_blank">Chatterbox</a> üzerine inşa edildi ·
+    <a href="https://resemble.ai" target="_blank">Resemble AI</a> · MIT Lisansı
   </p>
 </footer>
 
