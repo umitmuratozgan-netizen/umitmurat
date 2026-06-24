@@ -1,0 +1,15 @@
+# Render.com ücretsiz web servisi yapılandırması (Blueprint).
+# Render bu repoyu bağladığında Docker imajını kurar ve public bir URL verir.
+services:
+  - type: web
+    name: satranc-kocu
+    runtime: docker
+    plan: free
+    branch: claude/fervent-knuth-nqdkc6
+    envVars:
+      # Görüntü→FEN için ücretsiz Gemini anahtarı (Render panelinden gizli olarak gir):
+      - key: GEMINI_API_KEY
+        sync: false
+      # Linki başkaları açamasın diye erişim anahtarı (Render panelinden gir):
+      - key: CHESS_TOKEN
+        sync: false

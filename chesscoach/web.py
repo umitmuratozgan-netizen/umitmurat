@@ -11,11 +11,16 @@ from __future__ import annotations
 import html
 import io
 import json
+import os
 import tempfile
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from urllib.parse import parse_qs, urlparse
 
 from .engine import ChessEngine
 from .explain import describe
+
+# İsteğe bağlı erişim anahtarı: CHESS_TOKEN ayarlıysa linke ?token=... gerekir.
+TOKEN = os.environ.get("CHESS_TOKEN")
 
 PAGE = """<!doctype html><html lang=tr><head>
 <meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
@@ -30,7 +35,7 @@ PAGE = """<!doctype html><html lang=tr><head>
  .hint{{color:#888;font-size:.85rem}}
 </style></head><body>
 <h1>♟️ Satranç Koçu</h1>
-<form method=post enctype=multipart/form-data action=/analyze>
+<form method=post enctype=multipart/form-data action="{action}">
  <label>Tahta ekran görüntüsü <span class=hint>(Gemini anahtarı gerekir)</span></label>
  <input type=file name=image accept=image/*>
  <label>…veya FEN'i elle yapıştır</label>
@@ -75,15 +80,30 @@ class Handler(BaseHTTPRequestHandler):
         self.end_headers()
         self.wfile.write(b)
 
+    def _token_ok(self) -> bool:
+        if not TOKEN:
+            return True
+        q = parse_qs(urlparse(self.path).query)
+        return q.get("token", [None])[0] == TOKEN
+
+    def _action(self) -> str:
+        return f"/analyze?token={TOKEN}" if TOKEN else "/analyze"
+
     def do_GET(self):
-        if self.path != "/":
+        if urlparse(self.path).path != "/":
             self._send("yok", 404)
             return
-        self._send(PAGE.format(result=""))
+        if not self._token_ok():
+            self._send("🔒 Erişim anahtarı gerekli: linke ?token=... ekle.", 401)
+            return
+        self._send(PAGE.format(result="", action=self._action()))
 
     def do_POST(self):
-        if self.path != "/analyze":
+        if urlparse(self.path).path != "/analyze":
             self._send("yok", 404)
+            return
+        if not self._token_ok():
+            self._send("🔒 Erişim anahtarı geçersiz.", 401)
             return
         length = int(self.headers.get("Content-Length", 0))
         body = self.rfile.read(length)
@@ -113,17 +133,20 @@ class Handler(BaseHTTPRequestHandler):
         except Exception as e:
             out = f"❌ Hata: {e}"
 
-        self._send(PAGE.format(result=f"<pre>{html.escape(out)}</pre>"))
+        self._send(PAGE.format(result=f"<pre>{html.escape(out)}</pre>", action=self._action()))
 
     def log_message(self, *a):  # sessiz
         pass
 
 
 def serve(host: str = "0.0.0.0", port: int = 8000):
+    port = int(os.environ.get("PORT", port))  # bulut host'ları PORT'u verir
     Handler.engine = ChessEngine()
     srv = ThreadingHTTPServer((host, port), Handler)
     print(f"♟️  Satranç Koçu çalışıyor → http://{host}:{port}")
-    print("   Telefondan aynı ağda bilgisayarının IP'siyle aç (örn. http://192.168.1.20:8000)")
+    if TOKEN:
+        print(f"   🔒 Erişim anahtarı aktif — linke ?token={TOKEN} ekle.")
+    print("   Telefondan: bulutta link / yerelde aynı ağda IP ile aç.")
     try:
         srv.serve_forever()
     except KeyboardInterrupt:
