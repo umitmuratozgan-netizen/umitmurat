@@ -1,0 +1,4 @@
+chess>=1.10.0
+# Stockfish ayrıca sistemden gerekir:  apt-get install stockfish
+# (veya https://stockfishchess.org/download/ ; STOCKFISH_PATH ile yol verilebilir)
+# Vision (görüntü→FEN) için Gemini ücretsiz anahtarı:  GEMINI_API_KEY
